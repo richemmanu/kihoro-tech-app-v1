@@ -1,0 +1,27 @@
+server:
+  shutdown: graceful
+  servlet:
+    context-path: /kihoro-tech-app-v1
+  port: 8080
+
+spring:
+  application:
+    name: kihoro-tech-app-v1
+  actuator:
+    endpoints:
+      web:
+        exposure:
+          include:health,info,prometheus
+  datasource:
+    url: jdbc:h2:mem:APP_PROJECT
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+  # Lets expose h2 console here
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2-console

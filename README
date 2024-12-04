@@ -1,0 +1,23 @@
+Make sure you have the following installed:
+Java 17+ (Spring Boot 3.x requires JDK 21 or higher)
+Maven (for building the project)
+Docker (optional, if you're using Docker to run the application)
+Git (optional, for cloning the repository)
+
+#Clone the repo
+git clone https://gitlab.com/fintech-dev/kihoro-tech-app-v1.git
+cd kihoro-tech-app-v1
+
+#Build application
+./mvnw clean package
+
+#run application change the version created after build stage
+java -jar target/kihoro-tech-app-v1-1.0.0.jar
+
+#or run from an IDE like IntelliJ
+
+#also Postman collection is attached in folder called postman
+
+#swagger
+
+http://localhost:8080/kihoro-tech-app-v1/swagger-ui/index.html

@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "3315ed36-5774-4f2a-97d8-11e623dab241",
+		"name": "Kihoro-Senior-Dev_Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4260757"
+	},
+	"item": [
+		{
+			"name": "create-project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Test Project\",\r\n    \"description\":\"A great project to start\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-project-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/projects/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-project-task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"KCB Task MBP\",\r\n    \"description\": \"Finish project documentation for all apis provided\",\r\n    \"status\": \"TO_DO\",\r\n    \"dueDate\": \"2024-12-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/projects/1/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"projects",
+						"1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-task-by projectId-filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"KCB Task MBP\",\r\n    \"description\": \"Finish project documentation for all apis provided\",\r\n    \"status\": \"TO_DO\",\r\n    \"dueDate\": \"2024-12-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/projects/1/tasks?status=TO_DO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"projects",
+						"1",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "TO_DO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"KCB Task MBP-Revamped\",\r\n    \"description\": \"Finish project documentation for all apis provided\",\r\n    \"status\": \"IN_PROGRESS\",\r\n    \"dueDate\": \"2024-12-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/tasks/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "project-summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/kihoro-tech-app-v1/api/v1/projects/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kihoro-tech-app-v1",
+						"api",
+						"v1",
+						"projects",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
